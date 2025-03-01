@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepo yaaa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            overflow: hidden;
+            background: #ffafcc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #b4e9ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 203, 246, 0.796);
+            max-width: 100%; /* Menyesuaikan agar tidak kepotong di layar kecil */
+            width: 500px; /* Batas lebar konten */
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: -10vh;
+            animation: fall 5s linear infinite;
+        }
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            top: 0;
+            left: 10px;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(-45deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(-45deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+        .button {
+            background: white;
+            color: #ff477e;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #ff477e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Yeeeeeyyyyyyyyyyyy adek mencapai puncak🥳🥳🥳🥳🥳🥳</h1>
+        <p>hadiahnya setelah ini</p>
+                
+    </div>
+    
+    <button class="button" onclick="window.location.href='11.html';">Klik sinii😜</button>
+    
+    
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
+            
+            const randomLeft = Math.random() * 100;
+            heart.style.left = `${randomLeft}vw`;
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 200);
+    </script>
+</body>
+</html>
